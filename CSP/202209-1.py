@@ -5,10 +5,10 @@ n, m = map(int, input().split())
 a = list(map(int, input().split()))
 #print(a)
 
-# b(k)表示题目a(k)的正确选项
+# b(b)表示题目a(b)的正确选项
 b = list(range(n + 1))
 
-# 辅助数组c(k)表示数组a(k)的前缀乘积
+# 辅助数组c(b)表示数组a(b)的前缀乘积
 c = list(range(n + 1))
 c[0] = 1
 temp = 1
@@ -17,7 +17,7 @@ for i in range(1, n + 1):
     temp = c[i]
 #print(c)
 
-# 求b(k)
+# 求b(b)
 presum = 0
 for i in range(1, n + 1):
     temp = m % c[i]
