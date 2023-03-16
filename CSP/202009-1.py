@@ -1,41 +1,20 @@
 n, X, Y = map(int, input().split())
-
-nearest_3_points = [0] * 3
+dist_index_type = []
 for i in range(1, n + 1):
     x, y = map(int, input().split())
     d = (X - x) ** 2 + (Y - y) ** 2
-    index_dist = [i, d]
-
-    if i > 3:
-        for j in range(2, -1, -1):
-            if d < nearest_3_points[j][1]:
-                nearest_3_points.insert(j, index_dist)
-            elif d == nearest_3_points[j][1]:
-                if i < nearest_3_points[j][0]:
-                    nearest_3_points.insert(j, index_dist)
-                else:
-                    nearest_3_points.insert(j + 1, index_dist)
-    elif i == 1:
-        nearest_3_points[0] = index_dist
-    elif i == 2:
-        if d < nearest_3_points[0][1]:
-            nearest_3_points.insert(0, index_dist)
-        elif d >= nearest_3_points[0][1]:
-            nearest_3_points[1] = index_dist
-    elif i == 3:
-        if d < nearest_3_points[1][1]:
-            nearest_3_points.insert(1, index_dist)
-        elif d == nearest_3_points[1][1]:
-            nearest_3_points[2] = index_dist
-        elif d < nearest_3_points[0][1]:
-            nearest_3_points.insert(0, index_dist)
-        elif d == nearest_3_points[0][1]:
-            nearest_3_points.insert(1, index_dist)
-        else:
-            nearest_3_points[2] = index_dist
+    dist_index_type.append([d, i, 0])
 
 for i in range(0, 3):
+    min = 10000000
+    min_index = 0
+    for j in range(0, n):
+        if dist_index_type[j][0] < min and dist_index_type[j][2] == 0:
+            min = dist_index_type[j][0]
+            min_index = j
+    dist_index_type[min_index][2] = 1
+
     if i != 2:
-        print(nearest_3_points[i][0])
+        print(dist_index_type[min_index][1])
     else:
-        print(nearest_3_points[i][0], end='')
+        print(dist_index_type[min_index][1], end='')
