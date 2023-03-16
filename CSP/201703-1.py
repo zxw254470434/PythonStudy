@@ -8,7 +8,8 @@ for i in range(0, n):
     if weight >= k:
         counter += 1
         weight = 0
-    if i==n-1:
-        counter+=1
+    else:
+        if i == n - 1:
+            counter += 1
 
-print(counter,end='')
+print(counter, end='')
