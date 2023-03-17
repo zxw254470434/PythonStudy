@@ -1,7 +1,7 @@
-# n 题目数量，m 神秘数字
+# day 题目数量，m 神秘数字
 n, m = map(int, input().split())
 
-# 用空格分隔的 n 个整数, 依次表示每道选择题的选项数目。
+# 用空格分隔的 day 个整数, 依次表示每道选择题的选项数目。
 a = list(map(int, input().split()))
 #print(a)
 
