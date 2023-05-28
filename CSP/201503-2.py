@@ -1,7 +1,7 @@
 n = int(input())
 nums = input().split()
 counter = [0] * 1001
-num_number = set()
+num_number = set()  # 记录有多少个不重复的数字
 for i in range(0, n):
     nums[i] = int(nums[i])
     num_number.add(nums[i])

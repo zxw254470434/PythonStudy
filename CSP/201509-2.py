@@ -17,11 +17,11 @@ days_2 = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 if is_runyear(y):
     sum = 0
-    month=0
+    month = 0
     day = 0
     for i in range(0, 12):
         if sum + days_2[i] >= d:
-            month=i+1
+            month = i + 1
             day = d - sum
             break
         sum += days_2[i]
