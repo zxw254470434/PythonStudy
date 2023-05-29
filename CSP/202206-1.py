@@ -5,10 +5,7 @@ n = int(input())
 a = list(map(int, input().split()))
 
 # 求 a 的均值
-a_sum = 0
-for i in range(0, n):
-    a_sum += a[i]
-a_mean = a_sum / n
+a_mean = sum(a) / n
 
 # 求方差
 variance_sum = 0

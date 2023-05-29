@@ -12,4 +12,4 @@ for i in range(0, k):
         counter += 1
     varriables.add(xi)
 
-print(counter,end='')
+print(counter, end='')
