@@ -22,3 +22,4 @@ while num_del < n - 1:
 for i in range(0, n):
     if kids[i] != 0:
         print(kids[i], end='')
+        break
