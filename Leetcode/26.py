@@ -1,13 +1,17 @@
-from typing import List
+from ListNode import *
+from typing import *
 
 
-class Solution_26:
-    def removeDuplicates(nums: List[int]) -> int:
-        for i in range(0, len(nums) - 1):
-            if nums[i] > nums[i + 1]:
-                break
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        if len(nums) == 0:
+            return 0
 
-
-test = Solution_26
-nums = [1, 1, 2]
-print(test.removeDuplicates(nums))
+        slow = 0
+        fast = 1
+        while fast < len(nums):
+            if nums[fast] != nums[slow]:
+                slow += 1
+                nums[slow] = nums[fast]
+            fast += 1
+        return slow + 1
