@@ -1,7 +1,7 @@
 from typing import List
 
 
-class Solution1:
+class Solution88:
     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         """
         Do not return anything, modify nums1 in-place instead.
